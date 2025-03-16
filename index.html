@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title class="blinking-title">?</title>
+  <link rel="icon" href="https://cdn.discordapp.com/emojis/1297952981798617090.webp?size=96" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+  <meta content="#2b2d31" name="theme-color">
+  <meta content="made by @novakelofy" property="og:description">
+</head>
+<body>
+    
+  <script>
+    
+    document.addEventListener('contextmenu', function(event) {
+        event.preventDefault(); 
+    });
+
+    document.addEventListener('keydown', function(event) {
+        if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === 'I') {
+            event.preventDefault(); 
+        }
+    });
+
+    function audioPlay() {
+        var audio = document.getElementById("audio");
+        audio.volume = 0.3; 
+        audio.currentTime = 0;
+        audio.play();
+    }
+
+
+    function toggleMute() {
+        var audio = document.getElementById("audio");
+        var soundIcon = document.getElementById("sound-icon");
+
+        // Alterna o volume
+        if (audio.muted) {
+            audio.muted = false;
+            soundIcon.src = "img/desmutado.png"; 
+        } else {
+            audio.muted = true;
+            soundIcon.src = "img/mutado.png"; 
+        }
+    }
+
+  </script>
+  
+  <audio loop="" preload="auto" id="audio">
+    <source src="media/u.mp3" type="audio/mpeg">
+  </audio>
+
+  <input type="checkbox" autocomplete="on" id="overlay-toggle">
+  <div class="overlay fullscreen">
+    <label for="overlay-toggle" onclick="audioPlay(); ">
+      <span class="overlayhover hover" style="font-family: monospace; font-size: 0.6em;">APERTE NA TELA</span>
+    </label>
+  </div>
+
+  <div class="sound-toggle">
+    <img id="sound-icon" src="img/desmutado.png" alt="Som" class="sound-icon" onclick="toggleMute();">
+  </div>
+
+  <div class="profile-container">
+    <div class="card">
+      <div class="avatar">
+        <img id="avatar1" src="3.gif" alt="Avatar do Discord">
+      </div>
+      <div class="info">
+        <h1 id="nickname1">
+          <span id="nickname-text1">@novake</span>
+        </h1>
+        <p id="subnick1" class="subnick">@novake</p>
+        <span class="badges">
+          <img src="https://raw.githubusercontent.com/mezotv/discord-badges/refs/heads/main/assets/discordnitro.svg" alt="" class="badge">
+        </span>
+      </div>
+      <div class="viewer-count">
+        <img src="https://cdn-icons-png.flaticon.com/512/159/159604.png" alt="Visualizações" class="eye-icon">
+        <span id="view-count">90k</span>
+      </div>
+      <a href="https://discord.com/users/887794559759814656" target="_blank">
+      </a>
+    </div>
+  </div>
+
+  <script src="script/script.js"></script>
+</body>
+</html>
